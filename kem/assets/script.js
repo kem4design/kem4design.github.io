@@ -1,9 +1,16 @@
 
 (() => {
   const preloader = document.getElementById('preloader');
-  const hideLoader = () => { if (preloader) preloader.classList.add('loaded'); };
-  window.addEventListener('load', hideLoader);
-  window.setTimeout(hideLoader, 2200);
+  const loaderStartedAt = Date.now();
+  let loaderHidden = false;
+  const hideLoader = () => {
+    if (!preloader || loaderHidden) return;
+    loaderHidden = true;
+    const remaining = Math.max(0, 900 - (Date.now() - loaderStartedAt));
+    window.setTimeout(() => preloader.classList.add('loaded'), remaining);
+  };
+  window.addEventListener('load', hideLoader, { once: true });
+  window.setTimeout(hideLoader, 3500);
 
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();

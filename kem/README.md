@@ -33,3 +33,15 @@ Responsive multi-page Bootstrap website starter.
 8. Consider configuring custom SEO titles, Open Graph images, analytics, and sitemap.
 
 The website uses external CDNs and Google Fonts, so an internet connection is required for those assets.
+
+
+Arabic website: open `ar/index.html`. Arabic pages are right-to-left and share the main assets in `../assets/`. Use the English link in the navigation to return to the matching English page.
+
+
+## Latest refinements
+- Arabic RTL navigation and a fully Arabic, structured footer across all Arabic pages.
+- Labeled, mobile-friendly Call and WhatsApp actions.
+- Branded logo preloader with an animated progress line and minimum display time.
+- English pages retain their English labels.
+
+Preview English at `index.html` and Arabic at `ar/index.html`. Upload the entire folder to hosting so shared assets and individual pages stay together.
